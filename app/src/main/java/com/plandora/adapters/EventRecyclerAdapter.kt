@@ -50,7 +50,7 @@ class EventRecyclerAdapter(private var items: List<Event>, private val onClickLi
                 .replace("{time}", event.remainingDays().toString(), true)
 
             //Every Event that takes place in less than 10 days should be displayed in colorAccent instead of colorPrimary
-            if (event.remainingDays() < 10) eventRemainingDays.setTextColor(R.color.colorAccent.toInt())
+            if (event.remainingDays() < 10) this.eventRemainingDays.setTextColor(R.color.colorAccent.toInt())
         }
 
         override fun onClick(v: View?) {
