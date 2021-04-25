@@ -27,6 +27,7 @@ class MainActivity : PlandoraActivity(), NavigationView.OnNavigationItemSelected
             return@setOnNavigationItemSelectedListener updateFragmentViewById(it.itemId)
         }
 
+        //Token für FCM
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
                 Log.w(TAG, "Fetching FCM registration token failed", task.exception)

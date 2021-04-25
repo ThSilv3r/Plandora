@@ -211,5 +211,4 @@ open class CreateEventActivity :
             else -> CreateEventValidationTypes.SUCCESS
         }
     }
-
 }
