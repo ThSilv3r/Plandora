@@ -1,5 +1,6 @@
 package com.plandora.activity.main.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,7 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.plandora.R
 import com.plandora.activity.PlandoraActivity
 import com.plandora.activity.dialogs.AddGiftIdeaDialog
+import com.plandora.activity.launch.SplashScreenActivity
 import com.plandora.activity.main.GiftIdeaDialogActivity
+import com.plandora.activity.main.MainActivity
+import com.plandora.activity.main.NotificationsFragment
 import com.plandora.adapters.AttendeeRecyclerAdapter
 import com.plandora.adapters.GiftIdeaRecyclerAdapter
 import com.plandora.controllers.PlandoraEventController
@@ -189,6 +193,7 @@ class EventDetailActivity : PlandoraActivity(),
 
     override fun onUpdateSuccess(event: Event) {
         PlandoraEventController().getEventList(this)
+        DashboardFragment()
         finish()
     }
 

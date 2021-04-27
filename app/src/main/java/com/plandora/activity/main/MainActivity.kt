@@ -82,4 +82,12 @@ class MainActivity : PlandoraActivity(), NavigationView.OnNavigationItemSelected
         finish()
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+    }
+
 }

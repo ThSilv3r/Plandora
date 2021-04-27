@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.plandora.R
 import com.plandora.activity.CreateEventActivity
+import com.plandora.activity.main.MainActivity
 import com.plandora.models.events.Event
 import com.plandora.adapters.EventRecyclerAdapter
 import com.plandora.controllers.PlandoraEventController
@@ -45,6 +46,7 @@ class DashboardFragment : Fragment(), EventRecyclerAdapter.OnClickListener {
     }
 
     override fun onClickListener(index: Int) {
+        
         val intent = Intent(rootView.context, EventDetailActivity::class.java)
         intent.putExtra("event_object", items[index])
         startActivity(intent)
