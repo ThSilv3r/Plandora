@@ -58,6 +58,12 @@ data class Event(
         override fun newArray(size: Int): Array<Event?> {
             return arrayOfNulls(size)
         }
+
+        fun getTimestamp(year: Int, monthOfYear: Int, dayOfMonth: Int, hours: Int, minutes: Int): Long {
+            return SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US)
+                .parse("${dayOfMonth.toString().format(2)}-${monthOfYear.toString().format(2)}-${year.toString().format(4)} ${hours.toString().format(2)}:${minutes.toString().format(2)}")!!.time
+        }
+
     }
 
     fun remainingDays(): Int {
@@ -92,11 +98,6 @@ data class Event(
 
     fun getTimeAsString(): String {
         return SimpleDateFormat("HH:mm").format(Timestamp(timestamp))
-    }
-
-    fun getTimestamp(year: Int, monthOfYear: Int, dayOfMonth: Int, hours: Int, minutes: Int): Long {
-        return SimpleDateFormat("dd-MM-yyyy mm:HH", Locale.US)
-            .parse("${dayOfMonth.toString().format(2)}-${monthOfYear.toString().format(2)}-${year.toString().format(4)} ${hours.toString().format(2)}:${minutes.toString().format(2)}")!!.time
     }
 
     override fun compareTo(other: Event): Int {

@@ -159,7 +159,7 @@ open class CreateEventActivity :
             eventType = EventType.valueOf(event_type_spinner.selectedItem.toString())
             description = event_description_input.text.toString()
             annual = cb_annual.isChecked
-            timestamp = Event().getTimestamp(year, monthOfYear, dayOfMonth, hours, minutes)
+            timestamp = Event.getTimestamp(year, monthOfYear, dayOfMonth, hours, minutes)
             attendees = PlandoraUser().getIdsFromUserObjects(attendeesList)
             giftIdeas = list
         }
